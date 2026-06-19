@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@/components/Analytics";
+import { BackgroundDecor } from "@/components/BackgroundDecor";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 
@@ -62,8 +63,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja" className={`${sans.variable} ${display.variable}`}>
       <body className="min-h-screen font-sans antialiased">
-        {/* 全ページ共通の控えめな背景装飾（固定・テーマ配色のにじみ＋微細ドット） */}
-        <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 bg-decor" />
+        {/* 全ページ共通の控えめな背景装飾（固定・にじみ＋ドット＋看護モチーフのアイコン散らし） */}
+        <BackgroundDecor />
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <a
