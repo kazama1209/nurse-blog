@@ -28,6 +28,7 @@ npm run dev                  # http://localhost:3000
 | `npm run build` | 本番ビルド |
 | `npm run start` | 本番サーバー起動（build後） |
 | `npm run check:posts` | 記事の審査前セルフチェック（frontmatter・2000字・PR/出典） |
+| `node scripts/fetch-photos.mjs` | 各記事のカバー写真を Pexels から取得し `public/images/posts/<slug>.jpg` に保存（`--force`で再取得） |
 
 ## 環境変数（`.env.local`）
 
@@ -96,7 +97,16 @@ sources:              # 出典（数値・医療記述には必須）
 | `<PRBadge />` / `<PRBadge variant="banner" />` | PR表記 |
 | `<Illust name="…" caption="…" align="center\|left\|right" tone="teal\|pink\|warm\|violet" />` | 本文中の図版（自作SVGイラスト）。`name` は `lib/motifs.ts` の `IllustName`（drip / syringe / clock / wallet / heart-hands など22種） |
 
-> 記事のカバー画像（一覧カード・記事冒頭・カテゴリページ）は `lib/motifs.ts` の `slugMotif` でslug→モチーフを対応づけ、`<CoverImage>` が**自動生成**します。新規記事を足したら `slugMotif` に1行追加すると専用カバーになります（未登録でもカテゴリ既定の絵で表示されます）。すべて自作SVGのため写真素材の著作権リスクはありません。
+### カバー画像（写真 ＋ SVGフォールバック）
+
+記事のカバー画像（一覧カード・記事冒頭ヒーロー・OGP）は `<CoverImage>` が次の優先順で表示します。
+
+1. **実写真**：`public/images/posts/<slug>.jpg` があればそれ（[Pexels](https://www.pexels.com/) 由来。無料・帰属義務なしだが、記事下に撮影者クレジットを表示）
+2. **SVGカバー**：写真が無ければ `lib/motifs.ts` の `slugMotif`（slug→モチーフ）からカテゴリ配色のSVGカバーを自動生成
+
+新規記事の写真は `node scripts/fetch-photos.mjs` で取得します（クエリは `scripts/fetch-photos.mjs` の `queries` に slug 単位で定義。差し替えたい場合はクエリを編集して `--force`）。クレジットは `content/photo-credits.json` に保存され、記事ページに自動表示されます。**写真を置かない記事でも自作SVGカバーで成立する**ため、常に著作権クリアです。
+
+記事本文中の図版は `<Illust>` の自作SVGイラスト（写真とSVGを併用するエディトリアル構成）。
 
 内部リンクは Markdown の `[テキスト](/blog/other-slug)` でOK（自動で `next/link`）。外部リンクは別タブで開きます。
 

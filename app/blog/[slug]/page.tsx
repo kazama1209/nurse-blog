@@ -10,6 +10,7 @@ import { Sources } from "@/components/Sources";
 import { RelatedPosts } from "@/components/RelatedPosts";
 import { ShareButtons } from "@/components/ShareButtons";
 import { CoverImage } from "@/components/CoverImage";
+import { getPhoto } from "@/lib/photos";
 import { JsonLd } from "@/components/JsonLd";
 import { getAllSlugs, getPostBySlug, getRelatedPosts, getAllPostMeta } from "@/lib/posts";
 import { getCategory } from "@/lib/categories";
@@ -28,7 +29,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!post) return {};
   const fm = post.frontmatter;
   const url = `/blog/${fm.slug}`;
-  const ogImage = fm.ogImage ?? siteConfig.defaultOgImage;
+  const ogImage = fm.ogImage ?? getPhoto(fm.slug)?.src ?? siteConfig.defaultOgImage;
   return {
     title: fm.title,
     description: fm.description,
@@ -58,6 +59,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const fm = post.frontmatter;
   const category = getCategory(fm.category);
   const meta = getAllPostMeta().find((p) => p.slug === fm.slug)!;
+  meta.ogImage = meta.ogImage ?? getPhoto(fm.slug)?.src ?? siteConfig.defaultOgImage;
   const related = getRelatedPosts(fm.slug, 3);
 
   const crumbs = [
@@ -98,8 +100,24 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
         {/* ヒーローカバー画像（記事ごとに固有） */}
         <div className="not-prose mt-6 overflow-hidden rounded-3xl shadow-sm ring-1 ring-pink-100">
-          <CoverImage slug={fm.slug} category={fm.category} variant="hero" showLabel={false} />
+          <CoverImage slug={fm.slug} category={fm.category} variant="hero" showLabel={false} priority />
         </div>
+        {(() => {
+          const photo = getPhoto(fm.slug);
+          if (!photo) return null;
+          return (
+            <p className="not-prose mt-1.5 text-right text-[11px] text-gray-400">
+              Photo:{" "}
+              <a href={photo.photographerUrl} target="_blank" rel="noopener noreferrer nofollow" className="hover:text-brand">
+                {photo.photographer}
+              </a>{" "}
+              /{" "}
+              <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer nofollow" className="hover:text-brand">
+                {photo.source}
+              </a>
+            </p>
+          );
+        })()}
 
         {fm.isPR && (
           <div className="not-prose">
