@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff1f3"/>
+      <stop offset="1" stop-color="#e6f5f4"/>
+    </linearGradient>
+    <linearGradient id="heart" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f8a86"/>
+      <stop offset="1" stop-color="#13a7a2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="150" cy="120" r="90" fill="#ffe3ea"/>
+  <circle cx="1060" cy="540" r="120" fill="#d8f3f0"/>
+  <g transform="translate(120 250) scale(2.6)">
+    <path d="M24 42S6 30.5 6 18.5C6 12.7 10.4 8.5 15.8 8.5c3.4 0 6.5 1.8 8.2 4.6 1.7-2.8 4.8-4.6 8.2-4.6C37.6 8.5 42 12.7 42 18.5 42 30.5 24 42 24 42Z" fill="url(#heart)"/>
+    <path d="M21 15h6v4h4v6h-4v4h-6v-4h-4v-6h4v-4Z" fill="#fff"/>
+  </g>
+  <text x="270" y="300" font-family="Hiragino Sans, sans-serif" font-size="68" font-weight="700" fill="#0b6764">ナースの逃げ道メモ</text>
+  <text x="272" y="378" font-family="Hiragino Sans, sans-serif" font-size="36" fill="#5b6b6a">学校では教わらない、現場で役立つ看護の知恵</text>
+</svg>

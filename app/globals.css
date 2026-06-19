@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fffaf7;
+  --bg-soft: #fff1f3;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--bg);
+    color: theme("colors.ink");
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background-color: theme("colors.accent");
+    color: #fff;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer components {
+  /* やわらかな背景グラデーション（女性らしい清潔感） */
+  .bg-aurora {
+    background:
+      radial-gradient(circle at 12% -10%, #ffe3ea 0, transparent 42%),
+      radial-gradient(circle at 92% 0%, #d8f3f0 0, transparent 40%),
+      var(--bg);
+  }
+
+  .card {
+    @apply rounded-3xl border border-pink-100/70 bg-white/80 shadow-[0_8px_30px_-12px_rgba(244,168,184,0.35)] backdrop-blur-sm transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-[0_18px_40px_-16px_rgba(15,138,134,0.35)];
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 font-bold text-white shadow-md shadow-brand/20 transition-all hover:bg-brand-dark hover:shadow-lg active:scale-95;
+  }
+  .btn-soft {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-light px-5 py-2.5 font-semibold text-brand-dark transition-colors hover:bg-brand hover:text-white;
+  }
+
+  .link-underline {
+    @apply bg-gradient-to-r from-accent to-accent bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 hover:bg-[length:100%_2px];
+  }
+}
+
+/* 装飾的なドット見出し下線 */
+.heading-deco::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #0f8a86, #f4a8b8);
+}
