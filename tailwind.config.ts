@@ -26,9 +26,19 @@ const config: Config = {
           "Meiryo",
           "sans-serif",
         ],
+        display: [
+          "var(--font-display)",
+          "Hiragino Mincho ProN",
+          "Yu Mincho",
+          "serif",
+        ],
+      },
+      borderRadius: {
+        editorial: "0.5rem",
       },
       maxWidth: {
         prose: "720px",
+        feature: "1120px",
       },
       typography: () => ({
         DEFAULT: {
@@ -40,12 +50,18 @@ const config: Config = {
             fontSize: "1.0625rem",
             lineHeight: "1.9",
             h2: {
-              marginTop: "2.4em",
-              borderLeft: "5px solid #0f8a86",
-              paddingLeft: "0.6em",
-              lineHeight: "1.5",
+              fontFamily: "var(--font-display), serif",
+              fontWeight: "600",
+              marginTop: "2.6em",
+              paddingBottom: "0.35em",
+              borderBottom: "1px solid rgba(15,138,134,0.28)",
+              lineHeight: "1.45",
             },
-            h3: { marginTop: "1.8em" },
+            h3: {
+              fontFamily: "var(--font-display), serif",
+              fontWeight: "600",
+              marginTop: "1.9em",
+            },
             a: { textUnderlineOffset: "3px" },
             "ul > li::marker": { color: "#0f8a86" },
             blockquote: {

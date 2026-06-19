@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --bg: #fffaf7;
-  --bg-soft: #fff1f3;
+  --bg: #fdfbf8;
+  --bg-soft: #f6efe9;
+  --rule: rgba(31, 41, 51, 0.14);
+  --rule-strong: rgba(31, 41, 51, 0.22);
 }
 
 @layer base {
@@ -25,55 +27,74 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-display), var(--font-sans), sans-serif;
-    letter-spacing: 0.01em;
+    font-family: var(--font-display), serif;
+    letter-spacing: 0.005em;
   }
 }
 
 @layer components {
-  /* 全ページ共通の背景装飾（固定レイヤー用）：コーナーの淡いにじみ＋微細なドット */
+  /* 全ページ共通の背景：温かいオフホワイト＋極薄の縦罫（雑誌の版面グリッド風） */
   .bg-decor {
     background-color: var(--bg);
     background-image:
-      radial-gradient(circle at 8% -6%, #ffe1e9 0, transparent 38%),
-      radial-gradient(circle at 94% 2%, #d6f2ef 0, transparent 36%),
-      radial-gradient(circle at 50% 112%, #ffe6ef 0, transparent 44%),
-      radial-gradient(rgba(15, 138, 134, 0.06) 1.1px, transparent 1.3px);
+      radial-gradient(circle at 6% -4%, rgba(244, 168, 184, 0.1) 0, transparent 34%),
+      radial-gradient(circle at 96% 0%, rgba(15, 138, 134, 0.07) 0, transparent 32%),
+      linear-gradient(to right, rgba(31, 41, 51, 0.035) 1px, transparent 1px);
     background-size:
       100% 100%,
       100% 100%,
-      100% 100%,
-      24px 24px;
-    background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+      96px 100%;
+    background-repeat: no-repeat, no-repeat, repeat-x;
   }
 
+  /* エディトリアル・カード：中庸の角丸＋hairlineの枠＋控えめな影 */
   .card {
-    @apply rounded-3xl border border-pink-100/70 bg-white/80 shadow-[0_8px_30px_-12px_rgba(244,168,184,0.35)] backdrop-blur-sm transition-all duration-300;
+    @apply rounded-editorial border border-[color:var(--rule)] bg-white transition-all duration-300;
   }
   .card-hover {
-    @apply hover:-translate-y-1 hover:shadow-[0_18px_40px_-16px_rgba(15,138,134,0.35)];
+    @apply hover:border-[color:var(--rule-strong)] hover:shadow-[0_14px_34px_-22px_rgba(31,41,51,0.4)];
   }
 
+  /* スモールキャップス調のカテゴリ・ラベル（罫付き） */
   .pill {
-    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold;
+    @apply inline-flex items-center gap-1 rounded-sm px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em];
   }
 
+  /* ボタン：角丸控えめ・直線基調 */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 font-bold text-white shadow-md shadow-brand/20 transition-all hover:bg-brand-dark hover:shadow-lg active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-editorial bg-brand px-6 py-3 font-semibold text-white transition-all hover:bg-brand-dark active:scale-[0.98];
   }
   .btn-soft {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-light px-5 py-2.5 font-semibold text-brand-dark transition-colors hover:bg-brand hover:text-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-editorial border border-brand/35 bg-transparent px-5 py-2.5 font-semibold text-brand-dark transition-colors hover:bg-brand hover:text-white;
   }
 
+  /* 罫線つきリンク（下線がにじむ） */
   .link-underline {
-    @apply bg-gradient-to-r from-accent to-accent bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 hover:bg-[length:100%_2px];
+    @apply bg-gradient-to-r from-brand to-brand bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 hover:bg-[length:100%_1px];
+  }
+
+  /* セリフ体の通し番号（目次リスト用） */
+  .editorial-num {
+    font-family: var(--font-display), serif;
+    @apply font-medium tabular-nums text-brand;
+    letter-spacing: 0.02em;
+  }
+
+  /* 細罫の水平ルール */
+  .hairline {
+    @apply border-0 border-t border-[color:var(--rule)];
+  }
+
+  /* スモールキャップスのセクション見出しラベル */
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-brand;
   }
 }
 
 /* スクロール表示（Reveal） */
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(18px);
   transition:
     opacity 0.7s ease,
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
@@ -92,13 +113,27 @@
   }
 }
 
-/* 装飾的なドット見出し下線 */
+/* 見出し下の細罫装飾（雑誌の小見出し風：短い太罫＋細い長罫） */
+.heading-deco {
+  position: relative;
+  padding-bottom: 0.65rem;
+}
 .heading-deco::after {
   content: "";
-  display: block;
-  width: 56px;
-  height: 4px;
-  margin-top: 0.5rem;
-  border-radius: 9999px;
-  background: linear-gradient(90deg, #0f8a86, #f4a8b8);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--rule);
+}
+.heading-deco::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 48px;
+  height: 3px;
+  background: theme("colors.brand.DEFAULT");
+  z-index: 1;
 }

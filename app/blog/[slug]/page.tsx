@@ -72,36 +72,33 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     <article>
       <JsonLd data={articleJsonLd(meta)} />
 
-      <Container size="prose" className="pt-6">
+      <Container size="wide" className="max-w-feature pt-6">
         <Breadcrumb crumbs={crumbs} />
       </Container>
 
-      {/* 記事ヘッダー */}
-      <Container size="prose" className="pt-5">
-        <header className="not-prose">
-          <div className="mb-3 flex flex-wrap items-center gap-2">
-            <CategoryPill category={fm.category} />
-            {fm.isPR && <PRBadge />}
-          </div>
-          <h1 className="font-display text-2xl font-bold leading-snug text-ink sm:text-[28px]">
-            {fm.title}
-          </h1>
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
-            <time dateTime={toDateOnly(fm.date)}>公開: {formatDateJa(fm.date)}</time>
-            {fm.updated && fm.updated !== fm.date && (
-              <time dateTime={toDateOnly(fm.updated)}>更新: {formatDateJa(fm.updated)}</time>
-            )}
-            <span>📖 約{post.readingMinutes}分</span>
-          </div>
-          <p className="mt-4 rounded-2xl bg-white/70 p-4 text-[15px] leading-relaxed text-gray-600 ring-1 ring-pink-100">
-            {fm.description}
-          </p>
-        </header>
-
-        {/* ヒーローカバー画像（記事ごとに固有） */}
-        <div className="not-prose mt-6 overflow-hidden rounded-3xl shadow-sm ring-1 ring-pink-100">
+      {/* 記事ヘッダー：カバー写真の上にタイトルをセンタリングで重ねるエディトリアル版面 */}
+      <Container size="wide" className="max-w-feature pt-5">
+        <header className="not-prose relative overflow-hidden rounded-editorial border border-[color:var(--rule)]">
           <CoverImage slug={fm.slug} category={fm.category} variant="hero" showLabel={false} priority />
-        </div>
+          {/* 可読性のためのオーバーレイ */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/35 to-black/20" />
+          <div className="absolute inset-0 flex flex-col items-center justify-end gap-3 p-6 text-center sm:p-10">
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <CategoryPill category={fm.category} />
+              {fm.isPR && <PRBadge />}
+            </div>
+            <h1 className="mx-auto max-w-3xl font-display text-2xl font-semibold leading-snug text-white drop-shadow-sm sm:text-4xl sm:leading-[1.3]">
+              {fm.title}
+            </h1>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-white/85">
+              <time dateTime={toDateOnly(fm.date)}>公開: {formatDateJa(fm.date)}</time>
+              {fm.updated && fm.updated !== fm.date && (
+                <time dateTime={toDateOnly(fm.updated)}>更新: {formatDateJa(fm.updated)}</time>
+              )}
+              <span>約{post.readingMinutes}分</span>
+            </div>
+          </div>
+        </header>
         {(() => {
           const photo = getPhoto(fm.slug);
           if (!photo) return null;
@@ -118,23 +115,30 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </p>
           );
         })()}
+      </Container>
 
+      {/* リード（大きめ・センタリング）＋PR帯 */}
+      <Container size="prose" className="pt-8">
+        <p className="not-prose mx-auto max-w-2xl text-center font-display text-lg leading-relaxed text-ink/85 sm:text-xl">
+          {fm.description}
+        </p>
+        <hr className="hairline mx-auto mt-8 w-24" />
         {fm.isPR && (
-          <div className="not-prose">
+          <div className="not-prose mt-6">
             <PRBadge variant="banner" />
           </div>
         )}
       </Container>
 
       {/* 本文 */}
-      <Container size="prose" className="py-8">
+      <Container size="prose" className="py-6">
         <MdxContent source={post.content} />
 
         {/* タグ */}
         {fm.tags?.length ? (
           <div className="not-prose mt-10 flex flex-wrap gap-2">
             {fm.tags.map((t) => (
-              <span key={t} className="pill bg-brand-light text-brand-dark">
+              <span key={t} className="pill border border-brand/30 text-brand-dark">
                 #{t}
               </span>
             ))}

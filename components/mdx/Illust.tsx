@@ -28,7 +28,7 @@ export function Illust({
     const float = align === "right" ? "sm:float-right sm:ml-5" : "sm:float-left sm:mr-5";
     return (
       <figure className={`not-prose my-4 w-full sm:w-56 ${float} mb-4`}>
-        <div className={`flex aspect-[4/3] items-center justify-center rounded-2xl bg-gradient-to-br ${tones[tone]} p-3 ring-1 ring-pink-100`}>
+        <div className={`flex aspect-[4/3] items-center justify-center rounded-editorial bg-gradient-to-br ${tones[tone]} p-3 ring-1 ring-[color:var(--rule)]`}>
           <Illustration name={name} title={caption} className="h-full w-full" />
         </div>
         {caption && <figcaption className="mt-2 text-center text-xs text-gray-500">{caption}</figcaption>}
@@ -38,7 +38,7 @@ export function Illust({
 
   return (
     <figure className="not-prose my-7">
-      <div className={`flex items-center justify-center rounded-3xl bg-gradient-to-br ${tones[tone]} p-6 ring-1 ring-pink-100`}>
+      <div className={`flex items-center justify-center rounded-editorial bg-gradient-to-br ${tones[tone]} p-6 ring-1 ring-[color:var(--rule)]`}>
         <div className="aspect-[5/3] w-full max-w-sm">
           <Illustration name={name} title={caption} className="h-full w-full" />
         </div>

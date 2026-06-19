@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Zen_Maru_Gothic } from "next/font/google";
+import { Noto_Sans_JP, Shippori_Mincho } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { Header } from "@/components/Header";
@@ -16,9 +16,9 @@ const sans = Noto_Sans_JP({
   display: "swap",
 });
 
-const display = Zen_Maru_Gothic({
+const display = Shippori_Mincho({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });

@@ -2,10 +2,10 @@ import Link from "next/link";
 import { getCategory } from "@/lib/categories";
 
 const styles: Record<string, string> = {
-  jitsumu: "bg-brand-light text-brand-dark",
-  nayami: "bg-pink-100 text-pink-700",
-  hatarakikata: "bg-amber-100 text-amber-700",
-  tenshoku: "bg-violet-100 text-violet-700",
+  jitsumu: "border border-brand/40 text-brand-dark bg-white/70",
+  nayami: "border border-pink-300 text-pink-700 bg-white/70",
+  hatarakikata: "border border-amber-300 text-amber-700 bg-white/70",
+  tenshoku: "border border-violet-300 text-violet-700 bg-white/70",
 };
 
 export function CategoryPill({

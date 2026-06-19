@@ -4,8 +4,8 @@ import { type PostSource } from "@/lib/posts";
 export function Sources({ sources }: { sources?: PostSource[] }) {
   if (!sources?.length) return null;
   return (
-    <section aria-labelledby="sources-heading" className="not-prose mt-12 rounded-2xl bg-white/70 p-5 sm:p-6 ring-1 ring-pink-100">
-      <h2 id="sources-heading" className="mb-3 flex items-center gap-2 text-base font-bold text-brand-dark">
+    <section aria-labelledby="sources-heading" className="not-prose mt-12 rounded-editorial border border-[color:var(--rule)] bg-white/70 p-5 sm:p-6">
+      <h2 id="sources-heading" className="mb-3 flex items-center gap-2 font-display text-base font-semibold text-brand-dark">
         <span aria-hidden>📚</span>出典・参考
       </h2>
       <ul className="space-y-2 text-sm">

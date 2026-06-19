@@ -13,12 +13,12 @@ export function AffiliateSlot({
   note?: string;
 }) {
   return (
-    <div className="not-prose my-7 overflow-hidden rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50 to-pink-50 p-5 sm:p-6">
-      <div className="mb-2 flex items-center gap-2">
+    <div className="not-prose my-7 overflow-hidden rounded-editorial border border-violet-300 bg-violet-50/50 p-5 sm:p-6">
+      <div className="mb-2 flex items-center gap-2 border-b border-violet-200 pb-2">
         <PRBadge />
-        <span className="text-xs font-semibold text-violet-700">広告枠（提携準備中）</span>
+        <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-violet-700">広告枠（提携準備中）</span>
       </div>
-      <p className="mb-1 text-base font-bold text-ink">
+      <p className="mb-1 mt-3 font-display text-lg font-semibold text-ink">
         {service}を探している方へ
       </p>
       <p className="mb-4 text-sm leading-relaxed text-gray-600">
@@ -30,7 +30,7 @@ export function AffiliateSlot({
         </span>
       </p>
       <span
-        className="inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-full bg-violet-300 px-6 py-3 font-bold text-white opacity-80"
+        className="inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-editorial bg-violet-400 px-6 py-3 font-semibold text-white opacity-80"
         aria-disabled
       >
         おすすめの転職サービスはこちら（準備中）
