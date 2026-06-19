@@ -61,7 +61,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja" className={`${sans.variable} ${display.variable}`}>
-      <body className="bg-aurora min-h-screen font-sans antialiased">
+      <body className="min-h-screen font-sans antialiased">
+        {/* 全ページ共通の控えめな背景装飾（固定・テーマ配色のにじみ＋微細ドット） */}
+        <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 bg-decor" />
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <a

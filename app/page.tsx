@@ -22,7 +22,9 @@ export default function HomePage() {
     <>
       {/* ヒーロー（静的・シンプル） */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:py-20">
+        <div aria-hidden className="pointer-events-none absolute -left-20 top-0 hidden h-52 w-52 rounded-full bg-pink-200/30 blur-3xl sm:block" />
+        <div aria-hidden className="pointer-events-none absolute -right-16 -top-8 hidden h-60 w-60 rounded-full bg-brand-light/50 blur-3xl sm:block" />
+        <div className="relative mx-auto max-w-3xl px-5 py-16 text-center sm:py-20">
           <span className="pill mb-5 bg-white/80 text-brand-dark ring-1 ring-pink-100">
             🌸 看護師のためのやさしいメモ帳
           </span>
@@ -75,9 +77,9 @@ export default function HomePage() {
             <span className="text-sm text-gray-400">全{all.length}記事</span>
           </div>
         </Reveal>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {latest.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 3) * 80}>
+            <Reveal key={p.slug} delay={(i % 3) * 80} className="h-full">
               <PostCard post={p} />
             </Reveal>
           ))}
@@ -101,7 +103,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </Reveal>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((p, i) => (
                 <Reveal key={p.slug} delay={(i % 3) * 80}>
                   <PostCard post={p} />

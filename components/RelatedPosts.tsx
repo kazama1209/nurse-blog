@@ -9,7 +9,7 @@ export function RelatedPosts({ posts }: { posts: PostMeta[] }) {
       <h2 id="related-heading" className="heading-deco mb-6 text-xl font-bold text-brand-dark">
         あわせて読みたい
       </h2>
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((p) => (
           <PostCard key={p.slug} post={p} />
         ))}

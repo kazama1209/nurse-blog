@@ -7,7 +7,7 @@ import { formatDateJa, toDateOnly } from "@/lib/format";
 /** 記事カード（カバー画像付き）。トップ・カテゴリ・関連記事で使用。 */
 export function PostCard({ post }: { post: PostMeta }) {
   return (
-    <article className="card card-hover group flex flex-col overflow-hidden">
+    <article className="card card-hover group flex h-full flex-col overflow-hidden">
       <Link href={`/blog/${post.slug}`} className="flex h-full flex-col">
         <div className="relative overflow-hidden">
           <div className="transition-transform duration-500 group-hover:scale-[1.04]">
@@ -25,7 +25,7 @@ export function PostCard({ post }: { post: PostMeta }) {
             <span aria-hidden>·</span>
             <span>📖 約{post.readingMinutes}分</span>
           </div>
-          <h3 className="text-lg font-bold leading-snug text-ink transition-colors group-hover:text-brand">
+          <h3 className="line-clamp-2 min-h-[3.25rem] text-lg font-bold leading-snug text-ink transition-colors group-hover:text-brand">
             {post.title}
           </h3>
           <p className="line-clamp-3 text-sm leading-relaxed text-gray-600">

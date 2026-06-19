@@ -60,7 +60,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
       </header>
 
       {posts.length ? (
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
             <PostCard key={p.slug} post={p} />
           ))}

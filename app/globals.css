@@ -31,12 +31,20 @@
 }
 
 @layer components {
-  /* やわらかな背景グラデーション（女性らしい清潔感） */
-  .bg-aurora {
-    background:
-      radial-gradient(circle at 12% -10%, #ffe3ea 0, transparent 42%),
-      radial-gradient(circle at 92% 0%, #d8f3f0 0, transparent 40%),
-      var(--bg);
+  /* 全ページ共通の背景装飾（固定レイヤー用）：コーナーの淡いにじみ＋微細なドット */
+  .bg-decor {
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(circle at 8% -6%, #ffe1e9 0, transparent 38%),
+      radial-gradient(circle at 94% 2%, #d6f2ef 0, transparent 36%),
+      radial-gradient(circle at 50% 112%, #ffe6ef 0, transparent 44%),
+      radial-gradient(rgba(15, 138, 134, 0.06) 1.1px, transparent 1.3px);
+    background-size:
+      100% 100%,
+      100% 100%,
+      100% 100%,
+      24px 24px;
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat;
   }
 
   .card {
