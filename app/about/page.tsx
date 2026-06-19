@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Logo } from "@/components/Logo";
+import { Illustration } from "@/components/Illustration";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -16,9 +17,15 @@ export default function AboutPage() {
     <Container size="prose" className="py-8">
       <Breadcrumb crumbs={[{ name: "ホーム", url: "/" }, { name: "運営者情報", url: "/about" }]} />
 
-      <div className="mt-6 flex items-center gap-3">
-        <Logo className="h-12 w-12" />
+      <div className="mt-6 flex items-center gap-4 rounded-3xl bg-gradient-to-br from-brand-light to-pink-50 p-6">
+        <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white/80 p-2 shadow-sm sm:h-24 sm:w-24">
+          <Illustration name="heart-hands" title="運営者" className="h-full w-full" />
+        </div>
         <div>
+          <div className="mb-1 flex items-center gap-2">
+            <Logo className="h-7 w-7" />
+            <span className="font-display font-bold text-brand-dark">{siteConfig.name}</span>
+          </div>
           <h1 className="font-display text-2xl font-bold text-brand-dark">運営者情報</h1>
           <p className="text-sm text-gray-400">About us</p>
         </div>

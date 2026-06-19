@@ -9,6 +9,7 @@ import { MdxContent } from "@/components/mdx/MdxContent";
 import { Sources } from "@/components/Sources";
 import { RelatedPosts } from "@/components/RelatedPosts";
 import { ShareButtons } from "@/components/ShareButtons";
+import { CoverImage } from "@/components/CoverImage";
 import { JsonLd } from "@/components/JsonLd";
 import { getAllSlugs, getPostBySlug, getRelatedPosts, getAllPostMeta } from "@/lib/posts";
 import { getCategory } from "@/lib/categories";
@@ -93,8 +94,18 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <p className="mt-4 rounded-2xl bg-white/70 p-4 text-[15px] leading-relaxed text-gray-600 ring-1 ring-pink-100">
             {fm.description}
           </p>
-          {fm.isPR && <PRBadge variant="banner" />}
         </header>
+
+        {/* ヒーローカバー画像（記事ごとに固有） */}
+        <div className="not-prose mt-6 overflow-hidden rounded-3xl shadow-sm ring-1 ring-pink-100">
+          <CoverImage slug={fm.slug} category={fm.category} variant="hero" showLabel={false} />
+        </div>
+
+        {fm.isPR && (
+          <div className="not-prose">
+            <PRBadge variant="banner" />
+          </div>
+        )}
       </Container>
 
       {/* 本文 */}

@@ -4,6 +4,7 @@ import { type ReactNode } from "react";
 import { Callout } from "./Callout";
 import { MedicalNote } from "./MedicalNote";
 import { AffiliateSlot } from "./AffiliateSlot";
+import { Illust } from "./Illust";
 import { PRBadge } from "../PRBadge";
 
 /** 内部リンクは next/link、外部リンクは別タブで開く。 */
@@ -33,6 +34,7 @@ const components = {
   Callout,
   MedicalNote,
   AffiliateSlot,
+  Illust,
   PRBadge,
 };
 
