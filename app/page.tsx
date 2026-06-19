@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { PostCard } from "@/components/PostCard";
-import { ParallaxHero } from "@/components/ParallaxHero";
 import { Reveal } from "@/components/Reveal";
 import { Illustration } from "@/components/Illustration";
 import { getAllPostMeta, getPostsByCategory } from "@/lib/posts";
 import { categories } from "@/lib/categories";
+import { siteConfig } from "@/lib/site";
 
 const categoryIllust = {
   jitsumu: "drip",
@@ -20,7 +20,32 @@ export default function HomePage() {
 
   return (
     <>
-      <ParallaxHero />
+      {/* ヒーロー（静的・シンプル） */}
+      <section className="relative overflow-hidden">
+        <div className="mx-auto max-w-3xl px-5 py-16 text-center sm:py-20">
+          <span className="pill mb-5 bg-white/80 text-brand-dark ring-1 ring-pink-100">
+            🌸 看護師のためのやさしいメモ帳
+          </span>
+          <h1 className="font-display text-3xl font-bold leading-tight text-ink sm:text-5xl">
+            学校では教わらない、
+            <br />
+            <span className="bg-gradient-to-r from-brand to-pink-400 bg-clip-text text-transparent">
+              現場の逃げ道。
+            </span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-gray-600 sm:text-base">
+            {siteConfig.description}
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link href="/category/jitsumu" className="btn-primary">
+              実務の小技を読む
+            </Link>
+            <Link href="/category/nayami" className="btn-soft">
+              新人の悩みに寄り添う記事
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* カテゴリ案内（一目で4カテゴリへ） */}
       <Container className="pb-4 pt-6">
