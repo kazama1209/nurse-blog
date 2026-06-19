@@ -66,14 +66,20 @@ function parseFile(file: string): Post {
 let _cache: Post[] | null = null;
 
 function loadAll(): Post[] {
-  if (_cache) return _cache;
+  // 本番ビルド時のみキャッシュ（30ファイルの再読込を避ける）。
+  // 開発時はキャッシュせず毎回読み直し、frontmatter（日付など）の編集を即反映する。
+  const useCache = process.env.NODE_ENV === "production";
+  if (useCache && _cache) return _cache;
+
   const posts = readAllFiles().map(parseFile);
-  // 新しい順
-  posts.sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime(),
-  );
-  _cache = posts;
+  // 公開日時の新しい順（降順）。同日時はslugで安定ソート。
+  posts.sort((a, b) => {
+    const diff =
+      new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
+    return diff !== 0 ? diff : a.frontmatter.slug.localeCompare(b.frontmatter.slug);
+  });
+
+  if (useCache) _cache = posts;
   return posts;
 }
 
