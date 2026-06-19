@@ -94,6 +94,9 @@ sources:              # 出典（数値・医療記述には必須）
 | `<Callout tone="point\|info\|warning\|tip" title="...">…</Callout>` | 強調ボックス |
 | `<AffiliateSlot service="…" note="…" />` | 転職アフィのリンク枠（提携前はプレースホルダ表示）。使う記事は `isPR: true` 必須 |
 | `<PRBadge />` / `<PRBadge variant="banner" />` | PR表記 |
+| `<Illust name="…" caption="…" align="center\|left\|right" tone="teal\|pink\|warm\|violet" />` | 本文中の図版（自作SVGイラスト）。`name` は `lib/motifs.ts` の `IllustName`（drip / syringe / clock / wallet / heart-hands など22種） |
+
+> 記事のカバー画像（一覧カード・記事冒頭・カテゴリページ）は `lib/motifs.ts` の `slugMotif` でslug→モチーフを対応づけ、`<CoverImage>` が**自動生成**します。新規記事を足したら `slugMotif` に1行追加すると専用カバーになります（未登録でもカテゴリ既定の絵で表示されます）。すべて自作SVGのため写真素材の著作権リスクはありません。
 
 内部リンクは Markdown の `[テキスト](/blog/other-slug)` でOK（自動で `next/link`）。外部リンクは別タブで開きます。
 
