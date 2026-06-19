@@ -208,5 +208,145 @@
     "url": "https://www.pexels.com/photo/serious-young-woman-reading-report-to-colleague-in-contemporary-workspace-5668853/",
     "alt": "From above of young female worker wearing modern coat analyzing details of project with colleague while sitting together at wooden desk with laptop and documents",
     "source": "Pexels"
+  },
+  "night-shift-aftermath": {
+    "photographer": "Thirdman",
+    "photographerUrl": "https://www.pexels.com/@thirdman",
+    "url": "https://www.pexels.com/photo/an-exhausted-medical-professional-sitting-on-the-floor-5327650/",
+    "alt": "A tired healthcare professional in gray scrubs resting against a wall, reflecting exhaustion.",
+    "source": "Pexels"
+  },
+  "pay-vs-responsibility": {
+    "photographer": "Nataliya Vaitkevich",
+    "photographerUrl": "https://www.pexels.com/@n-voitkevich",
+    "url": "https://www.pexels.com/photo/woman-in-black-long-sleeve-shirt-sitting-with-hand-on-her-head-6919757/",
+    "alt": "Woman in black sweater stressed with financial paperwork, overwhelmed at white table.",
+    "source": "Pexels"
+  },
+  "okyoku-relationship": {
+    "photographer": "RDNE Stock project",
+    "photographerUrl": "https://www.pexels.com/@rdne",
+    "url": "https://www.pexels.com/photo/nurse-assisting-a-patient-on-a-wheelchair-6129870/",
+    "alt": "A nurse helps a patient in a wheelchair down a hospital corridor, reflecting care and medical professionalism.",
+    "source": "Pexels"
+  },
+  "breaking-point-signs": {
+    "photographer": "Liza Summer",
+    "photographerUrl": "https://www.pexels.com/@liza-summer",
+    "url": "https://www.pexels.com/photo/thoughtful-young-ethnic-lady-crying-near-window-at-home-6382613/",
+    "alt": "Unhappy young African American female with dark curly hair in casual clothes crying and looking away while sitting near window at home",
+    "source": "Pexels"
+  },
+  "marriage-childbirth-worry": {
+    "photographer": "Nataliya Vaitkevich",
+    "photographerUrl": "https://www.pexels.com/@n-voitkevich",
+    "url": "https://www.pexels.com/photo/a-woman-pointing-a-pregnancy-test-at-a-calendar-5982128/",
+    "alt": "Smiling woman points at a date on a calendar, conveying excitement and anticipation.",
+    "source": "Pexels"
+  },
+  "pain-assessment-scale": {
+    "photographer": "RDNE Stock project",
+    "photographerUrl": "https://www.pexels.com/@rdne",
+    "url": "https://www.pexels.com/photo/a-nurse-checking-a-woman-s-blood-pressure-6129678/",
+    "alt": "A nurse in blue scrubs checks the blood pressure of a female patient in a hospital room.",
+    "source": "Pexels"
+  },
+  "pressure-ulcer-staging": {
+    "photographer": "RDNE Stock project",
+    "photographerUrl": "https://www.pexels.com/@rdne",
+    "url": "https://www.pexels.com/photo/nurse-measuring-the-blood-pressure-of-a-patient-6129676/",
+    "alt": "Nurse providing care to a patient in a hospital room with medical equipment.",
+    "source": "Pexels"
+  },
+  "bp-measurement-errors": {
+    "photographer": "cottonbro studio",
+    "photographerUrl": "https://www.pexels.com/@cottonbro",
+    "url": "https://www.pexels.com/photo/a-healthcare-worker-measuring-her-own-blood-pressure-using-a-sphygmomanometer-5721671/",
+    "alt": "African American nurse measuring blood pressure, representing healthcare and medical practice.",
+    "source": "Pexels"
+  },
+  "medication-6rights": {
+    "photographer": "RDNE Stock project",
+    "photographerUrl": "https://www.pexels.com/@rdne",
+    "url": "https://www.pexels.com/photo/nurse-unwrapping-a-sampler-6129687/",
+    "alt": "Close-up of a nurse unwrapping medical tools in a hospital setting, emphasizing care.",
+    "source": "Pexels"
+  },
+  "night-shift-allowance": {
+    "photographer": "Pavel Danilyuk",
+    "photographerUrl": "https://www.pexels.com/@pavel-danilyuk",
+    "url": "https://www.pexels.com/photo/close-up-shot-of-a-person-counting-money-7654163/",
+    "alt": "Hands counting euro bills on a wooden desk with calculator, financial documents, and laptop nearby.",
+    "source": "Pexels"
+  },
+  "nurse-no-night-shift-jobs": {
+    "photographer": "Los Muertos Crew",
+    "photographerUrl": "https://www.pexels.com/@cristian-rojas",
+    "url": "https://www.pexels.com/photo/woman-in-blue-scrub-suit-smiling-8460373/",
+    "alt": "Smiling female nurse in blue scrubs opens a glass door in a healthcare setting.",
+    "source": "Pexels"
+  },
+  "health-checkup-nurse": {
+    "photographer": "Los Muertos Crew",
+    "photographerUrl": "https://www.pexels.com/@cristian-rojas",
+    "url": "https://www.pexels.com/photo/a-woman-getting-her-blood-drawn-8460347/",
+    "alt": "Healthcare professional performing blood sampling for medical testing with a focus on disease prevention.",
+    "source": "Pexels"
+  },
+  "industrial-nurse": {
+    "photographer": "Los Muertos Crew",
+    "photographerUrl": "https://www.pexels.com/@cristian-rojas",
+    "url": "https://www.pexels.com/photo/medical-practitioners-in-office-8460371/",
+    "alt": "Group of diverse healthcare professionals in a clinical setting, showcasing teamwork and care.",
+    "source": "Pexels"
+  },
+  "crc-clinical-research": {
+    "photographer": "Zakir Rushanly",
+    "photographerUrl": "https://www.pexels.com/@zeoxs",
+    "url": "https://www.pexels.com/photo/a-woman-wearing-a-lab-coat-in-a-laboratory-11811087/",
+    "alt": "Woman in a lab coat examines equipment in a laboratory environment, Baku, Azerbaijan.",
+    "source": "Pexels"
+  },
+  "white-hospital-features": {
+    "photographer": "Nenad Delibos",
+    "photographerUrl": "https://www.pexels.com/@deliboss",
+    "url": "https://www.pexels.com/photo/modern-gynecological-examination-room-interior-32830266/",
+    "alt": "Bright gynecological examination room with adjustable chair and overhead light in a medical facility.",
+    "source": "Pexels"
+  },
+  "motivation-letter-clinic": {
+    "photographer": "Sora Shimazaki",
+    "photographerUrl": "https://www.pexels.com/@sora-shimazaki",
+    "url": "https://www.pexels.com/photo/focused-woman-writing-in-clipboard-while-hiring-candidate-5668869/",
+    "alt": "Crop young female unemployed job seeker filling questionnaire sitting at table during interview in office",
+    "source": "Pexels"
+  },
+  "interview-questions-7": {
+    "photographer": "Tima Miroshnichenko",
+    "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+    "url": "https://www.pexels.com/photo/businessman-looking-at-employee-5439368/",
+    "alt": "Two men in a job interview setting in a modern office with large windows.",
+    "source": "Pexels"
+  },
+  "resignation-how-to-say": {
+    "photographer": "Edmond Dantès",
+    "photographerUrl": "https://www.pexels.com/@edmond-dantes",
+    "url": "https://www.pexels.com/photo/man-and-woman-having-a-conversation-at-the-office-8549944/",
+    "alt": "Two colleagues having a business conversation in a modern office setting.",
+    "source": "Pexels"
+  },
+  "job-change-flow": {
+    "photographer": "Anete Lusina",
+    "photographerUrl": "https://www.pexels.com/@anete-lusina",
+    "url": "https://www.pexels.com/photo/crop-ethnic-freelancer-writing-in-notebook-at-street-table-5239745/",
+    "alt": "Crop ethnic female manager taking notes in notepad while working at wooden table with smartphone and diary",
+    "source": "Pexels"
+  },
+  "best-time-to-change": {
+    "photographer": "Matheus Bertelli",
+    "photographerUrl": "https://www.pexels.com/@bertellifotografia",
+    "url": "https://www.pexels.com/photo/simple-desk-calendar-for-january-display-29509476/",
+    "alt": "Minimalist desk calendar displaying the month of January with clean design.",
+    "source": "Pexels"
   }
 }

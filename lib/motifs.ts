@@ -57,6 +57,27 @@ export const slugMotif: Record<string, IllustName> = {
   "clinic-outpatient": "building",
   "non-ward-options": "compass",
   "nurse-job-agency-guide": "door",
+  // --- 新規20本 ---
+  "night-shift-aftermath": "moon",
+  "pay-vs-responsibility": "wallet",
+  "okyoku-relationship": "two-people",
+  "breaking-point-signs": "heart-hands",
+  "marriage-childbirth-worry": "calendar",
+  "pain-assessment-scale": "vitals",
+  "pressure-ulcer-staging": "bed",
+  "bp-measurement-errors": "vitals",
+  "medication-6rights": "syringe",
+  "night-shift-allowance": "wallet",
+  "nurse-no-night-shift-jobs": "compass",
+  "health-checkup-nurse": "clipboard",
+  "industrial-nurse": "building",
+  "crc-clinical-research": "clipboard",
+  "white-hospital-features": "building",
+  "motivation-letter-clinic": "clipboard",
+  "interview-questions-7": "chat",
+  "resignation-how-to-say": "door",
+  "job-change-flow": "compass",
+  "best-time-to-change": "calendar",
 };
 
 const fallbackByCategory: Record<CategorySlug, IllustName> = {

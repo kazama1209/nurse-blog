@@ -61,6 +61,27 @@ const queries = {
   "clinic-outpatient": "clinic reception medical",
   "non-ward-options": "business woman office japan",
   "nurse-job-agency-guide": "career consultation meeting desk",
+  // --- 新規20本 ---
+  "night-shift-aftermath": "tired nurse resting hospital",
+  "pay-vs-responsibility": "nurse thinking desk salary",
+  "okyoku-relationship": "nurses tension hospital corridor",
+  "breaking-point-signs": "tired woman window sad",
+  "marriage-childbirth-worry": "pregnant woman calendar planning",
+  "pain-assessment-scale": "nurse checking patient pain",
+  "pressure-ulcer-staging": "hospital bed patient care nurse",
+  "bp-measurement-errors": "blood pressure measurement nurse",
+  "medication-6rights": "nurse medication preparation hospital",
+  "night-shift-allowance": "money calculator night desk",
+  "nurse-no-night-shift-jobs": "nurse clinic daytime smiling",
+  "health-checkup-nurse": "health checkup blood test clinic",
+  "industrial-nurse": "office health room nurse corporate",
+  "crc-clinical-research": "clinical research laboratory office",
+  "white-hospital-features": "modern hospital bright clean",
+  "motivation-letter-clinic": "writing resume application desk",
+  "interview-questions-7": "job interview meeting office",
+  "resignation-how-to-say": "office meeting conversation desk",
+  "job-change-flow": "career path planning notebook",
+  "best-time-to-change": "calendar planning new year desk",
 };
 
 async function searchPhoto(key, query) {
