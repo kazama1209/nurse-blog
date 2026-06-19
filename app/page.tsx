@@ -4,56 +4,15 @@ import { PostCard } from "@/components/PostCard";
 import { ParallaxHero } from "@/components/ParallaxHero";
 import { Reveal } from "@/components/Reveal";
 import { Illustration } from "@/components/Illustration";
-import { ScrollScenes, type Scene } from "@/components/ScrollScenes";
 import { getAllPostMeta, getPostsByCategory } from "@/lib/posts";
 import { categories } from "@/lib/categories";
 
-const scenes: Scene[] = [
-  {
-    href: "/category/jitsumu",
-    kicker: "STEP 01 ｜ 現場の実務",
-    emoji: "💉",
-    illust: "drip",
-    heading: "学校では習わない、現場の小技",
-    text: "輸液ポンプの桁間違い、患者誤認、急変の前兆——医療安全の一次情報をもとに、ミスを防ぐ実務の知恵をまとめています。",
-    from: "#13a7a2",
-    to: "#7fd8d2",
-    ink: "#0b6764",
-  },
-  {
-    href: "/category/nayami",
-    kicker: "STEP 02 ｜ 悩み・メンタル",
-    emoji: "🌷",
-    illust: "heart-hands",
-    heading: "しんどい時、ひとりじゃない",
-    text: "「辞めたい」「同期と比べてつらい」。新人〜若手が抱えがちな悩みに、先輩目線でそっと寄り添います。",
-    from: "#f3899e",
-    to: "#ffd2c2",
-    ink: "#b5475e",
-  },
-  {
-    href: "/category/hatarakikata",
-    kicker: "STEP 03 ｜ 働き方・お金",
-    emoji: "💴",
-    illust: "wallet",
-    heading: "知らないと損する、働き方とお金",
-    text: "前残業・夜勤手当・有給・給料。知っておきたい権利とお金の話を、一次データをもとに中立的に整理します。",
-    from: "#f0b450",
-    to: "#ffe0a3",
-    ink: "#a9701a",
-  },
-  {
-    href: "/category/tenshoku",
-    kicker: "STEP 04 ｜ 転職・職場選び",
-    emoji: "🚪",
-    illust: "door",
-    heading: "後悔しない、職場選び",
-    text: "ブラック病院の見抜き方から、美容・訪問・クリニックの実際、転職サービスの使い方まで。逃げ道は、ちゃんとあります。",
-    from: "#8f7ce9",
-    to: "#cfc1f7",
-    ink: "#5a47a8",
-  },
-];
+const categoryIllust = {
+  jitsumu: "drip",
+  nayami: "heart-hands",
+  hatarakikata: "wallet",
+  tenshoku: "door",
+} as const;
 
 export default function HomePage() {
   const all = getAllPostMeta();
@@ -63,8 +22,25 @@ export default function HomePage() {
     <>
       <ParallaxHero />
 
-      {/* ピン留めスクロールシーン（4カテゴリの紹介） */}
-      <ScrollScenes scenes={scenes} />
+      {/* カテゴリ案内（一目で4カテゴリへ） */}
+      <Container className="pb-4 pt-6">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {categories.map((c, i) => (
+            <Reveal key={c.slug} delay={i * 70}>
+              <Link
+                href={`/category/${c.slug}`}
+                className="card card-hover flex h-full flex-col gap-2 p-5"
+              >
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-light/70 p-2">
+                  <Illustration name={categoryIllust[c.slug]} className="h-full w-full" />
+                </div>
+                <span className="mt-1 font-bold text-brand-dark">{c.name}</span>
+                <span className="text-xs leading-relaxed text-gray-500">{c.description}</span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
 
       {/* 新着記事 */}
       <Container className="py-12">
