@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { siteConfig } from "@/lib/site";
 import { categories } from "@/lib/categories";
@@ -14,6 +15,8 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
   return (
     <header className="sticky top-0 z-50 border-b border-[color:var(--rule)] bg-[var(--bg)]/92 backdrop-blur-md">
       {/* 上段：中央ロゴ（雑誌のマストヘッド） */}
@@ -53,7 +56,12 @@ export function Header() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="block whitespace-nowrap px-6 py-2.5 text-[13px] font-medium tracking-wide text-gray-600 transition-colors hover:text-brand-dark"
+                aria-current={isActive(l.href) ? "page" : undefined}
+                className={`relative block whitespace-nowrap px-6 py-2.5 text-[13px] font-medium tracking-wide transition-colors hover:text-brand-dark ${
+                  isActive(l.href)
+                    ? "text-brand-dark after:absolute after:inset-x-5 after:-bottom-px after:h-[2px] after:rounded-full after:bg-gradient-to-r after:from-brand after:to-accent"
+                    : "text-gray-600"
+                }`}
               >
                 {l.label}
               </Link>
@@ -71,10 +79,16 @@ export function Header() {
                 <Link
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="flex items-center gap-2 px-1 py-3 text-sm font-medium text-gray-700 hover:text-brand"
+                  aria-current={isActive(l.href) ? "page" : undefined}
+                  className={`flex items-center gap-2 px-1 py-3 text-sm font-medium ${
+                    isActive(l.href) ? "text-brand-dark" : "text-gray-700 hover:text-brand"
+                  }`}
                 >
                   <span aria-hidden>{l.emoji}</span>
                   {l.label}
+                  {isActive(l.href) && (
+                    <span aria-hidden className="ml-auto h-1.5 w-1.5 rounded-full bg-accent" />
+                  )}
                 </Link>
               </li>
             ))}

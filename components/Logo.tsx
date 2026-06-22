@@ -6,7 +6,7 @@ export function Logo({ className = "h-9 w-9" }: { className?: string }) {
       viewBox="0 0 48 48"
       fill="none"
       role="img"
-      aria-label="ナースの逃げ道メモ ロゴ"
+      aria-label="ナースの逃げ道 ロゴ"
     >
       <defs>
         <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">

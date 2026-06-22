@@ -18,14 +18,6 @@ export function Footer() {
             <p className="mt-3 text-sm leading-relaxed text-gray-500">
               学校では習わない、現場で本当に役立つ看護の知恵を、一次情報をもとにやさしくお届けします。
             </p>
-            <a
-              href={siteConfig.social.tiktok}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-1 text-sm text-brand hover:underline"
-            >
-              TikTok {siteConfig.social.tiktokHandle}
-            </a>
           </div>
 
           {/* カテゴリ */}

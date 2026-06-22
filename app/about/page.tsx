@@ -37,11 +37,8 @@ export default function AboutPage() {
           <strong>{siteConfig.author}</strong>
         </p>
         <p>
-          本サイト「{siteConfig.name}」は、看護師向けTikTok「みき｜ナースの逃げ道メモ（
-          <a href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer">
-            {siteConfig.social.tiktokHandle}
-          </a>
-          ）」を母体に運営している、看護師向けの情報メディアです。
+          本サイト「{siteConfig.name}」は、看護学校では習わないけれど現場で本当に役立つ知恵を、
+          新人〜若手ナース向けにまとめている看護師向けの情報メディアです。
         </p>
 
         <h2>運営の目的・方針</h2>

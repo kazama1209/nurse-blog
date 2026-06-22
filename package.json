@@ -2,7 +2,7 @@
   "name": "nurse-blog",
   "version": "0.1.0",
   "private": true,
-  "description": "看護師向けブログ「ナースの逃げ道メモ」",
+  "description": "看護師向けブログ「ナースの逃げ道」",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

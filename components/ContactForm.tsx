@@ -56,7 +56,7 @@ export function ContactForm({ formId }: { formId: string }) {
           required
           autoComplete="name"
           className="w-full rounded-xl border border-pink-100 bg-white px-4 py-2.5 text-sm outline-none ring-brand/30 focus:border-brand focus:ring-2"
-          placeholder="みき"
+          placeholder="山田 花子"
         />
       </div>
       <div>

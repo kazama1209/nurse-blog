@@ -21,20 +21,38 @@ export default function HomePage() {
 
   return (
     <>
-      {/* マストヘッド帯：誌名・号数風のリード */}
-      <Container size="wide" className="max-w-feature pt-10 sm:pt-12">
-        <Reveal>
-          <div className="flex flex-col items-center gap-3 border-b border-[color:var(--rule)] pb-8 text-center">
-            <span className="eyebrow">Editorial for Nurses</span>
-            <h1 className="font-display text-2xl font-semibold leading-snug text-ink sm:text-[34px]">
-              学校では教わらない、現場の逃げ道。
-            </h1>
-            <p className="mx-auto max-w-2xl text-[15px] leading-relaxed text-gray-600">
-              {siteConfig.description}
-            </p>
-          </div>
-        </Reveal>
-      </Container>
+      {/* マストヘッド帯：誌名・号数風のリード（やわらかな彩りを添える） */}
+      <section className="relative overflow-hidden">
+        {/* アンビエントな光：ティール×ピンクを超ぼかしで（装飾・読み上げ対象外） */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute -left-24 -top-12 h-72 w-72 rounded-full bg-brand/10 blur-3xl sm:h-96 sm:w-96" />
+          <div className="absolute -right-20 top-2 h-72 w-72 rounded-full bg-accent/20 blur-3xl sm:h-96 sm:w-96" />
+        </div>
+        <Container size="wide" className="max-w-feature pt-10 sm:pt-12">
+          <Reveal>
+            <div className="flex flex-col items-center gap-3 border-b border-[color:var(--rule)] pb-8 text-center">
+              <span className="eyebrow inline-flex items-center gap-2">
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
+                Editorial for Nurses
+              </span>
+              <h1 className="font-display text-2xl font-semibold leading-snug text-ink sm:text-[34px]">
+                学校では教わらない、現場の
+                <span className="relative inline-block">
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-[-3px] bottom-[0.12em] -z-10 h-[0.42em] rounded-[2px] bg-accent/45"
+                  />
+                  <span className="relative text-brand-dark">逃げ道</span>
+                </span>
+                。
+              </h1>
+              <p className="mx-auto max-w-2xl text-[15px] leading-relaxed text-gray-600">
+                {siteConfig.description}
+              </p>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
 
       {/* 特集（最新1本を大判フィーチャー） */}
       {featured && (

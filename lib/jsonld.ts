@@ -10,7 +10,6 @@ export function organizationJsonLd() {
     url: siteConfig.url,
     logo: absoluteUrl("/logo.svg"),
     description: siteConfig.description,
-    sameAs: [siteConfig.social.tiktok],
   };
 }
 
