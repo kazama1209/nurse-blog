@@ -69,7 +69,7 @@ export default function AboutPage() {
 
         <h2>広告（アフィリエイト）について</h2>
         <p>
-          本サイトは、運営を継続するためにアフィリエイト広告（A8.net 等）を利用しています。
+          本サイトは、運営を継続するためにアフィリエイト広告を利用しています。
           広告（PR）を含む記事には、その旨を明示しています。詳しくは
           <Link href="/privacy-policy">プライバシーポリシー</Link>および
           <Link href="/disclaimer">免責事項</Link>をご覧ください。
