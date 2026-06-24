@@ -102,13 +102,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         {(() => {
           const photo = getPhoto(fm.slug);
           if (!photo) return null;
-          if (photo.source !== "Pexels") {
-            return (
-              <p className="not-prose mt-1.5 text-right text-[11px] text-gray-400">
-                画像：{photo.source}（イメージ）
-              </p>
-            );
-          }
+          // AI生成画像は帰属表示不要のためクレジット行を出さない
+          if (photo.source !== "Pexels") return null;
           return (
             <p className="not-prose mt-1.5 text-right text-[11px] text-gray-400">
               Photo:{" "}
