@@ -369,5 +369,12 @@
     "url": "",
     "alt": "点滴の滴下数計算のイメージ画像",
     "source": "AI生成（Gemini）"
+  },
+  "suction-tips": {
+    "photographer": "Nano Banana Pro",
+    "photographerUrl": "",
+    "url": "",
+    "alt": "口腔・鼻腔吸引のイメージ画像",
+    "source": "AI生成（Gemini）"
   }
 }
