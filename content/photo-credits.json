@@ -404,5 +404,10 @@
     "url": "",
     "alt": "ブランクから看護師に復職する人のイメージ画像",
     "source": "AI生成（Gemini）"
+  },
+  "nurse-resume-writing": {
+    "alt": "看護師が転職用の職務経歴書を書いているイメージ画像",
+    "photographer": "Nano Banana Pro",
+    "source": "AI生成（Gemini）"
   }
 }
