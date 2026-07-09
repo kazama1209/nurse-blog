@@ -460,5 +460,12 @@
     "url": "",
     "alt": "ベッドサイドで高齢の患者の手を取り、寄り添って話を聞く看護師",
     "source": "AI生成（Gemini）"
+  },
+  "standard-precautions": {
+    "photographer": "Nano Banana Pro",
+    "photographerUrl": "",
+    "url": "",
+    "alt": "アルコール手指消毒薬を使う、ニトリル手袋をつけた看護師の手",
+    "source": "AI生成（Gemini）"
   }
 }
